@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Γάμος του Μενέλαου & της Ευαγγελίας</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arima:wght@300;400;500;600;700&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arima', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 400;
+            color: #5e473a;
+            line-height: 1.6;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            background-color: #ffffff;
+            background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+            background-repeat: repeat;
+            padding: 20px 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            padding: 20px;
+            background-color: #ffffff;
+            position: relative;
+            border: 4px solid #5e473a;
+            margin: 0 auto;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 1px solid #d9ccc2;
+            position: relative;
+            overflow: hidden;
+            height: 250px;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            animation: fadeInUp 1.5s ease-out forwards;
+            font-family: 'Tangerine', cursive;
+            font-size: 5rem;
+            color: #5e473a;
+            margin-bottom: 20px;
+            line-height: 1;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .couple-names {
+            font-family: 'Arima', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+            animation: fadeInUp 1.5s ease-out 0.3s forwards;
+            opacity: 0;
+        }
+
+        h2, h3 {
+            font-family: 'Arima', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 500;
+            color: #5e473a;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2:after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 1px;
+            background-color: #d9ccc2;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .date-banner {
+            background-color: #f4eee8;
+            color: #5e473a;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.5rem;
+            margin: 30px 0;
+            border: 1px solid #d9ccc2;
+            border-radius: 3px;
+        }
+
+        .content-section {
+            margin: 40px 0;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .families-container, .koumbaroi-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px auto;
+            max-width: 800px;
+        }
+
+        .family-column, .koumbaroi-column {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            padding: 0 15px;
+        }
+
+        .map-container {
+            height: 300px;
+            margin: 20px 0;
+            border: 1px solid #d9ccc2;
+            border-radius: 3px;
+            overflow: hidden;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            pointer-events: auto;
+        }
+
+        .details {
+            text-align: center;
+            margin: 20px 0;
+            line-height: 1.8;
+        }
+
+        .names {
+            font-size: 1.2rem;
+            margin: 15px 0;
+        }
+
+        button {
+            background-color: #5e473a;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin: 15px auto;
+            display: inline-block;
+            transition: all 0.3s;
+            border-radius: 3px;
+            font-family: 'Arima', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 500;
+            -webkit-appearance: none;
+        }
+
+        button:hover {
+            background-color: #7a5e4b;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 1px solid #d9ccc2;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #5e473a;
+        }
+
+        .qr-code {
+            margin: 20px auto;
+            padding: 15px;
+            background-color: white;
+            display: inline-block;
+            border: 0px solid #d9ccc2;
+            border-radius: 3px;
+            text-align: center;
+        }
+
+        .qr-code img {
+            width: 150px;
+            height: 150px;
+            display: block;
+            margin: 0 auto 10px;
+        }
+
+        .qr-code button {
+            margin-top: 10px;
+        }
+
+        @supports (-webkit-touch-callout: none) {
+            body {
+                font-family: 'Arima', -apple-system, BlinkMacSystemFont, sans-serif;
+            }
+            
+            .map-container {
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            button {
+                -webkit-appearance: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 3.5rem;
+                margin-bottom: 15px;
+            }
+
+            .couple-names {
+                font-size: 1.4rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .date-banner {
+                font-size: 1.2rem;
+                padding: 10px;
+            }
+
+            .families-container, .koumbaroi-container {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            .family-column, .koumbaroi-column {
+                flex: 1 1 40%;
+                min-width: 150px;
+            }
+
+            .map-container {
+                height: 200px;
+            }
+
+            .qr-code img {
+                width: 130px;
+                height: 130px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 3rem;
+            }
+
+            .couple-names {
+                font-size: 1.2rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            .date-banner {
+                font-size: 1rem;
+            }
+
+            .family-column, .koumbaroi-column {
+                flex: 1 1 100%;
+            }
+
+            .qr-code img {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    M|E
+                </div>
+                <div class="couple-names">
+                    Μενέλαος & Ευαγγελία
+                </div>
+            </div>
+        </header>
+        <div class="content-section">
+            <p>Με χαρά σας προσκαλούμε στο γάμο μας</p>
+        </div>
+
+        <div class="date-banner">
+           Το Σάββατο, 31 Μαΐου 2025 στις 19:00 στον Ι.Ν. Αγίου Δημητρίου Πολύπετρο Ν. Κιλκίς.
+        </div>
+        <div class="content-section">
+            <h2>Οι Οικογένειες</h2>
+            <div class="families-container">
+                <div class="family-column">
+                    <p>Αθανάσιος Κωνσταντής<br><br>Ευμορφία Αραμαπτζή</p>
+                </div>
+                <div class="family-column">
+                    <p>Πέτρος Μαυρουδής<br><br>Τριανταφυλλιά Πολίτου</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Οι Κουμπάροι</h2>
+            <div class="koumbaroi-container">
+                <div class="koumbaroi-column">
+                    <p>Ιωάννης Τζερεμές</p>
+                </div>
+                <div class="koumbaroi-column">
+                    <p>Ισμήνη Παναγιώτου</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <p>Ιερός Ναός Αγίου Δημητρίου</p>
+            <p>Πολύπετρο, Κιλκίς</p>
+
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d754.1871048888609!2d22.51449773496104!3d40.87739496416659!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1357d33519bff9a1%3A0x6cfe4875f6315d30!2zzpXOus66zrvOt8-Dzq_OsSDOhs6zzrnOv8-CIM6UzrfOvM6uz4TPgc65zr_Pgg!5e0!3m2!1sel!2sgr!4v1742729126598!5m2!1sel!2sgr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <a href="https://maps.app.goo.gl/gznh98cQkFp5KMoaA" target="_blank">
+                <button>Προβολή στο Google Maps</button>
+            </a>
+        </div>
+
+        <div class="content-section">
+            <h2>Δεξίωση</h2>
+            <p>Κτήμα Πασχαλάκη</p>
+            <p>Έναρξη στις 21:00</p>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62578.643050529674!2d22.598882861374733!3d40.8955541357774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a9d50da21652ad%3A0xb84d6bbb74d2b23!2zzprPhM6uzrzOsSDOlM61zr7Ouc-Oz4POtc-Jzr0gzqDOsc-Dz4fOsc67zqzOus63!5e0!3m2!1sel!2sgr!4v1742729186394!5m2!1sel!2sgr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <a href="https://maps.app.goo.gl/Bk8Ntj7gNvE68V1J6" target="_blank">
+                <button>Προβολή στο Google Maps</button>
+            </a>
+        </div>
+
+        <div class="content-section">
+            <h2>Φωτογραφίες από τη γιορτή</h2>
+            <p>Σαρώστε το QR Code και μοιραστείτε τις όμορφες στιγμές από τον γάμο μας.</p>
+            <div class="qr-code">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://example.com/upload-photos" alt="QR Code για ανέβασμα φωτογραφιών">
+                <a href="https://example.com/upload-photos" target="_blank">
+                    <button>Ανέβασμα φωτογραφιών</button>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p>Ανυπομονούμε να γιορτάσουμε μαζί σας!</p>
+            <p>Παρακαλούμε επιβεβαιώστε την παρουσία σας μέχρι τις 16 Μαΐου 2025</p>
+            <p>Επικοινωνία: {M}6975461525 | {E}6979127909</p>
+        </footer>
+    </div>
+    
+    <script>
+        // iOS map interaction fix
+        if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+            document.addEventListener('DOMContentLoaded', function() {
+                const maps = document.querySelectorAll('.map-container iframe');
+                maps.forEach(map => {
+                    const wrapper = document.createElement('div');
+                    wrapper.style.position = 'relative';
+                    wrapper.style.overflow = 'hidden';
+                    wrapper.style.width = '100%';
+                    wrapper.style.height = '100%';
+                    
+                    map.parentNode.insertBefore(wrapper, map);
+                    wrapper.appendChild(map);
+                    
+                    wrapper.addEventListener('click', function() {
+                        map.style.pointerEvents = 'auto';
+                    });
+                    
+                    map.addEventListener('mouseleave', function() {
+                        map.style.pointerEvents = 'none';
+                    });
+                });
+            });
+        }
+    </script>
+</body>
+</html>
